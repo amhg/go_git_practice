@@ -22,7 +22,7 @@ func about(w http.ResponseWriter, r *http.Request) {
 }
 
 func health(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("OK"))
+	panic("test")
 }
 
 func snippetView(w http.ResponseWriter, r *http.Request) {
