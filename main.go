@@ -21,6 +21,10 @@ func about(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("About Snippetbox"))
 }
 
+func health(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("OK"))
+}
+
 func snippetView(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(r.URL.Query().Get("id"))
 	fmt.Println("err: ", err)
@@ -50,6 +54,7 @@ func main() {
 	mux.HandleFunc("/snippet/view", snippetView)
 	mux.HandleFunc("/snippet/create", snippetCreate)
 	mux.HandleFunc("/snippet/about", about)
+	mux.HandleFunc("/health", health)
 
 	log.Print("Starting server on :4000")
 	err := http.ListenAndServe(":4000", mux) // host:port
