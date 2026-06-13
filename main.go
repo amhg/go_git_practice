@@ -22,6 +22,7 @@ func about(w http.ResponseWriter, r *http.Request) {
 }
 
 func health(w http.ResponseWriter, r *http.Request) {
+	log.Println("health endpoint hit")
 	panic("test")
 }
 
