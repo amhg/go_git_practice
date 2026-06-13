@@ -13,7 +13,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 	// 	http.NotFound(w, r)
 	// 	return
 	// }
-
+	log.Println("home endpoint hit")
 	w.Write([]byte("Hello from Snippetbox"))
 }
 
